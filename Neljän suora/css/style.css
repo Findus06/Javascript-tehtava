@@ -1,0 +1,32 @@
+body{
+  margin: auto;
+ 
+  height: 360px;
+  width: 420px;
+  
+ 
+
+}
+.grid {
+  margin: auto;
+  border: 1px solid;
+  height: 360px;
+  width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  height: 60px;
+  width: 60px;
+}
+
+.player-one {
+  background-color: red;
+  border-radius: 30px;
+}
+
+.player-two {
+  background-color: yellow;
+  border-radius: 30px;
+}
