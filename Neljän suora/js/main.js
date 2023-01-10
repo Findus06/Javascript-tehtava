@@ -109,7 +109,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
   }
-  
+  grid.onclick = e => {
+    let x = e.pageX - e.currentTarget.offsetLeft;
+    let y = e.pageY - e.currentTarget.offsetTop;
+    x = Math.floor(x /60);
+    y = Math.floor(y / 60);
+
+    Array[x] = Array[x] - 60;
+    const animation = document.createElement("div");
+    
+    if(currentPlayer = 1){
+
+      animation.classList.add("player-one");
+      currentPlayer = 2;
+    } else {
+
+      animation.classList.add("player-two");
+      currentPlayer = 1;
+    }
+
+    animation.style.left = x + "px";
+    animation.style.top = y + "px";
+
+    grid.appendChild(animation);
+
+    const id = setInterval(frame, 10);
+    function frame(){
+      if(pos == 300){
+
+        clearInterval(id);
+
+
+      } else{
+        pos++;
+        animation.style.top = pos + "px"
+
+
+
+      }
+
+    }
+
+
+  }
 
   for (let i = 0; i < squares.length; i++) {
     squares[i].onclick = () => {
